@@ -7,21 +7,23 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
+import {CardModule} from "../../shared/components";
 
 
 @NgModule({
   declarations: [
     TriviaFormComponent
   ],
-  imports: [
-    CommonModule,
-    TriviaFormRoutingModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CommonModule,
+        TriviaFormRoutingModule,
+        MatButtonModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        CardModule
+    ],
   exports: [
     TriviaFormComponent
   ]
