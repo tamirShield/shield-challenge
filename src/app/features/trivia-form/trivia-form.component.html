@@ -3,7 +3,7 @@
     <mat-card-title>Add Trivia</mat-card-title>
   </mat-card-header>
 
-  <form [formGroup]="formGroup">
+  <form [formGroup]="formGroup" (ngSubmit)="submit()">
     <mat-card-content>
       <mat-form-field>
         <input matInput placeholder="Title" formControlName="title" required>
@@ -36,7 +36,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button type="reset" mat-raised-button color="warn">Clear</button>
-      <button type="submit" mat-raised-button color="primary">Send</button>
+      <button type="submit" mat-raised-button color="primary" [disabled]="formGroup.invalid">Send</button>
     </mat-card-actions>
   </form>
 </mat-card>

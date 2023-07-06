@@ -1,20 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ListComponent } from './list.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ListComponent} from './list.component';
 import {ListRoutingModule} from "./list-routing.module";
-import {TriviaModule} from "../../shared/components/trivia";
+import {CardModule, TriviaModule} from "../../shared/components";
 
 @NgModule({
-  declarations: [
-    ListComponent
-  ],
-  imports: [
-    CommonModule,
-    ListRoutingModule,
-    TriviaModule,
-  ],
-  exports: [
-    ListComponent
-  ]
+    declarations: [
+        ListComponent
+    ],
+    imports: [
+        CommonModule,
+        ListRoutingModule,
+        TriviaModule,
+        CardModule,
+    ],
+    exports: [
+        ListComponent
+    ]
 })
-export class ListModule { }
+export class ListModule {
+}
