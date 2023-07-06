@@ -7,7 +7,7 @@ import {shibaTrivia} from "../../../utils";
 export class TriviaService {
 
     constructor() {
-        sessionStorage.setItem('trivia', JSON.stringify([shibaTrivia]))
+        this.saveTriviaToSessionStorage(shibaTrivia);
     }
 
     getTrivia(): Observable<Trivia[]> {
