@@ -1,0 +1,42 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Add Trivia</mat-card-title>
+  </mat-card-header>
+
+  <form [formGroup]="formGroup">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Subtitle" formControlName="subtitle">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="url" placeholder="Avatar Link" formControlName="avatarSrc">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Avatar Description" formControlName="avatarAlt">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="url" placeholder="Image Link" formControlName="imageSrc">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Image Description" formControlName="imageAlt">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput required></textarea>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="reset" mat-raised-button color="warn">Clear</button>
+      <button type="submit" mat-raised-button color="primary">Send</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

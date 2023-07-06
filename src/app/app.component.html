@@ -1,0 +1,22 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>Trivia</span>
+    <span class="spacer"></span>
+    <div class="button-row">
+      <div class="flex-container">
+        <div class="button-container">
+          <a mat-fab aria-label="Show all Trivia" [routerLink]="AppRoutes.LIST">
+            <mat-icon>list</mat-icon>
+          </a>
+          <a mat-fab aria-label="Add new Trivia" [routerLink]="AppRoutes.FORM">
+            <mat-icon>add</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+</p>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+

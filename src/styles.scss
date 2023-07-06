@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card {
+  max-width: 400px;
+  min-width: 300px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.button-row {
+  display: table-cell;
+}
+
+.button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  padding: 1rem;
+}
