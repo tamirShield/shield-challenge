@@ -5,15 +5,27 @@ import {shibaTrivia} from "../../../utils";
 
 @Injectable()
 export class TriviaService {
-  getTrivia(): Observable<Trivia[]> {
-    return of(
-      [
-        shibaTrivia
-      ]
-    )
-  }
 
-  saveTrivia(trivia: Trivia) {
-    return of(trivia).pipe(tap(() => console.log('saveTrivia', trivia)));
-  }
+    constructor() {
+        sessionStorage.setItem('trivia', JSON.stringify([shibaTrivia]))
+    }
+
+    getTrivia(): Observable<Trivia[]> {
+        return of(
+            this.getTriviaFromSessionStorage()
+        )
+    }
+
+    saveTrivia(trivia: Trivia): Observable<Trivia> {
+        this.saveTriviaToSessionStorage(trivia);
+        return of(trivia).pipe(tap(() => console.log('saveTrivia', trivia)));
+    }
+
+    private getTriviaFromSessionStorage(): Trivia[] {
+        return JSON.parse(sessionStorage.getItem('trivia') ?? '[]') as Trivia[]
+    }
+
+    private saveTriviaToSessionStorage(trivia: Trivia) {
+        sessionStorage.setItem('trivia', JSON.stringify([...this.getTriviaFromSessionStorage(), trivia]))
+    }
 }

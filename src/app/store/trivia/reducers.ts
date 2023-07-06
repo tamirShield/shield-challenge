@@ -1,12 +1,12 @@
 import {Trivia} from "../../shared/models";
 import {createReducer, on} from "@ngrx/store";
 import {
-  ADD_TRIVIA,
-  ADD_TRIVIA_FAILURE,
-  ADD_TRIVIA_SUCCESS,
-  GET_ALL_TRIVIA,
-  GET_ALL_TRIVIA_FAILURE,
-  GET_ALL_TRIVIA_SUCCESS
+  addTrivia,
+  addTriviaFailure,
+  addTriviaSuccess,
+  getAllTrivia,
+  getAllTriviaFailure,
+  getAllTriviaSuccess
 } from "./actions";
 
 export const triviaStateFeatureKey = 'triviaState';
@@ -26,18 +26,18 @@ const initialTriviaState: TriviaState = {
 
 export const triviaReducer = createReducer(
     initialTriviaState,
-    on(ADD_TRIVIA, GET_ALL_TRIVIA, state => ({...state, isLoading: true})),
-    on(ADD_TRIVIA_FAILURE, GET_ALL_TRIVIA_FAILURE, (state, {payload}) => ({
+    on(addTrivia, getAllTrivia, state => ({...state, isLoading: true})),
+    on(addTriviaFailure, getAllTriviaFailure, (state, {payload}) => ({
         ...state,
         isLoading: false,
         errors: [...state.errors, payload]
     })),
-    on(ADD_TRIVIA_SUCCESS, (state, {payload}) => ({
+    on(addTriviaSuccess, (state, {payload}) => ({
         ...state,
         isLoading: false,
         trivia: [...state.trivia, payload]
     })),
-    on(GET_ALL_TRIVIA_SUCCESS, (state, {payload}) => ({
+    on(getAllTriviaSuccess, (state, {payload}) => ({
             ...state,
             isLoading: false,
             trivia: payload
