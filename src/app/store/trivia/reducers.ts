@@ -8,6 +8,7 @@ import {
   GET_ALL_TRIVIA_FAILURE,
   GET_ALL_TRIVIA_SUCCESS
 } from "./actions";
+import {shibaTrivia} from "../../utils";
 
 export const triviaStateFeatureKey = 'triviaState';
 
@@ -18,7 +19,7 @@ export interface TriviaState {
 }
 
 const initialTriviaState: TriviaState = {
-  trivia: [],
+  trivia: [shibaTrivia],
   isLoading: false,
   errors: []
 
