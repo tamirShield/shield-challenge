@@ -7,6 +7,7 @@ import {shibaTrivia} from "../../../utils";
 export class TriviaService {
 
     constructor() {
+        sessionStorage.clear();
         this.saveTriviaToSessionStorage(shibaTrivia);
     }
 
