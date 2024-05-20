@@ -1,5 +1,4 @@
 export interface Trivia {
-  id : number;
   title : string;
   subtitle? : string;
   avatarSrc? : string;

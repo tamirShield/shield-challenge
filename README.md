@@ -21,13 +21,14 @@ This is a simple challenge to test your skills in Angular development.
 `list-service`:
 
 - `getTrivia` Method returns an array of trivia items.
-- `addTrivia` Method adds a new trivia item to the list.
+- `saveTrivia` Method adds a new trivia item to the list.
 
 `list-component` needs :
 
 - [ ] An implementation to retrieve the items.
-- [ ] The items should be displayed in the provided card component.
-- [ ] The cards should be displayed horizontally, line-wrapped and with space between them.
+- [ ] The items should be displayed in the provided trivia component.
+- [ ] The cards should be displayed horizontally, line-wrapped and with space 
+ between them.
 
 
 `trivia-form` needs :
